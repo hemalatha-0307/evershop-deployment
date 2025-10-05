@@ -1,14 +1,14 @@
 # Update package index and install MySQL client on EC2
-sudo apt update
-sudo apt install mysql-client -y
+    sudo apt update
+    sudo apt install mysql-client -y
 
 # Connect to RDS MySQL instance
-mysql -h evershop-task1.c18qiuusgpak.ap-south-1.rds.amazonaws.com -u admin1 -p
+    mysql -h evershop-task1.c18qiuusgpak.ap-south-1.rds.amazonaws.com -u admin1 -p
 
 # Verify database connection and operations
-SHOW DATABASES;
-CREATE DATABASE testdb;
-USE testdb;
-CREATE TABLE sample_table (id INT PRIMARY KEY, name VARCHAR(20));
-INSERT INTO sample_table VALUES (1, 'Hema');
-SELECT * FROM sample_table;
+    SHOW DATABASES;
+    CREATE DATABASE testdb;
+    USE testdb;
+    CREATE TABLE sample_table (id INT PRIMARY KEY, name VARCHAR(20));
+    INSERT INTO sample_table VALUES (1, 'Hema');
+    SELECT * FROM sample_table;
