@@ -1,0 +1,42 @@
+#Update OS and Install Docker
+    sudo apt update -y
+    sudo apt install docker.io -y
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo systemctl status docker
+
+#Install Docker Compose
+    sudo apt install docker-compose -y
+    docker-compose --version
+
+#Clone the Evershop Repository
+    git clone https://github.com/evershopcommerce/evershop.git
+    cd evershop
+
+#Build and Start Containers
+    sudo docker-compose up -d --build
+    sudo docker ps
+
+#Verify Running Containers
+    sudo docker-compose ps
+    sudo docker logs evershop -f
+
+#Check Application on Browser
+    curl http://localhost:3000
+-Then, open EC2 Public IPv4 address with port 3000 —
+example: http://13.233.173.114:3000
+
+#Stop and Restart Application
+    sudo docker-compose down
+    sudo docker-compose up -d
+
+#View Logs (For Debugging)
+    sudo docker logs evershop
+
+#Clean Up Docker Resources (After Testing)
+    sudo docker system prune -a -f
+    sudo docker volume prune -f
+
+#Final Verification
+    sudo docker ps
+
