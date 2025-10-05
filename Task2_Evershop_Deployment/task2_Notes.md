@@ -37,8 +37,10 @@
 &nbsp;- Configured app container to forward internal port 3000 to external port 80.
 
 &nbsp;- Ensured WebTier security group allows inbound rules such as:
+     
      Type: HTTP, TCP, Port: 80, Source: Internet (0.0.0.0/0)
-     Type: HTTP, TCP, Port: 80, Source: Internet-facing LB security group
+     
+&nbsp;  Type: HTTP, TCP, Port: 80, Source: Internet-facing LB security group
 
 &nbsp;- Verified Evershop application is accessible via the EC2 public IP:
 
@@ -54,7 +56,7 @@
 
 &nbsp;- Accessed PostgreSQL container and confirmed schema with:
 
-&nbsp*sudo docker exec -it task2\_evershop\_app\_database\_1 psql -U postgres*
+&nbsp;    *sudo docker exec -it task2\_evershop\_app\_database\_1 psql -U postgres*
 
      *\\dt*
 
