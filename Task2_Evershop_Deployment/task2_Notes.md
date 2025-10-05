@@ -8,7 +8,7 @@
 
 &nbsp;- Connected to the Web Server EC2 instance via SSH:
 
-&nbsp;     *ssh -i <keyfile.pem> ubuntu13.233.173.114*
+&nbsp;*ssh -i <keyfile.pem> ubuntu13.233.173.114*
 
       *sudo su*
 
@@ -38,8 +38,7 @@
 
 &nbsp;- Ensured WebTier security group allows inbound rules such as:
      Type: HTTP, TCP, Port: 80, Source: Internet (0.0.0.0/0)
-
-&nbsp;    Type: HTTP, TCP, Port: 80, Source: Internet-facing LB security group
+     Type: HTTP, TCP, Port: 80, Source: Internet-facing LB security group
 
 &nbsp;- Verified Evershop application is accessible via the EC2 public IP:
 
@@ -55,7 +54,7 @@
 
 &nbsp;- Accessed PostgreSQL container and confirmed schema with:
 
-&nbsp;    *sudo docker exec -it task2\_evershop\_app\_database\_1 psql -U postgres*
+&nbsp*sudo docker exec -it task2\_evershop\_app\_database\_1 psql -U postgres*
 
      *\\dt*
 
