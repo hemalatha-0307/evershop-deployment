@@ -51,8 +51,8 @@
              const updatedProducts = products.map((product, index) => ({ ...product, image: `${s3Base}${imageFiles[index % imageFiles.length]}` }));
              return { products: updatedProducts };
           }
-      }
-   };
+        }
+      };
 
 
 # Restart app container to apply changes
