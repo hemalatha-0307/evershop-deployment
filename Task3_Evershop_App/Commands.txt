@@ -1,0 +1,59 @@
+# Navigate to project folder (Ubuntu root)
+    cd ~/evershop/evershop-deployment/Task2_Evershop_App
+
+
+# Verify Docker containers
+    docker ps -a
+
+
+# Start app & database containers (if not running)
+    docker-compose up -d
+
+
+# Check products table in Postgres
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "SELECT id, name, image FROM products;"
+
+
+# Update PostgreSQL products table with S3 URLs
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "UPDATE products
+    SET image = 'https://evershop-product-images-internship.s3.ap-south-1.amazonaws.com/product-images/product1.jpg'
+    WHERE name = 'Striped Cotton Sweater';"
+
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "UPDATE products
+    SET image = 'https://evershop-product-images-internship.s3.ap-south-1.amazonaws.com/product-images/product2.jpg'
+    WHERE name = 'Denim Skinny Jeans';"
+
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "UPDATE products
+    SET image = 'https://evershop-product-images-internship.s3.ap-south-1.amazonaws.com/product-images/product3.jpg'
+    WHERE name = 'Classic Leather Loafers';"
+
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "UPDATE products
+    SET image = 'https://evershop-product-images-internship.s3.ap-south-1.amazonaws.com/product-images/product4.jpg'
+    WHERE name = 'Floral Maxi Dress';"
+
+
+# Verify products table again
+    docker exec -it task2_evershop_app_database_1 psql -U postgres -d evershop -c "SELECT id, name, image FROM products;"
+
+
+# To display images in the website (simulate fetch in app)
+   - Edit CollectionProductsWidget resolver to include S3 URLs
+   - Path: packages/evershop/node_modules/    @evershop/evershop/src/modules/catalog/graphql/types/Widget/CollectionProductsWidget/CollectionProductsWidget.resolvers.js
+
+   - Replace default code with:
+       const db = require('~/src/lib/db');
+       module.exports = {
+          Query: {
+             collectionProductsWidget: async (root, { collection, count }) => {
+             const products = await db.any('SELECT id, name, price, description FROM products LIMIT $1', [count || 4]);
+             const s3Base = 'https://evershop-product-images-internship.s3.ap-south-1.amazonaws.com/product-images/';
+             const imageFiles = ['product1.jpg','product2.jpg','product3.jpg','product4.jpg'];
+             const updatedProducts = products.map((product, index) => ({ ...product, image: `${s3Base}${imageFiles[index % imageFiles.length]}` }));
+             return { products: updatedProducts };
+          }
+      }
+   };
+
+
+# Restart app container to apply changes
+    docker restart task2_evershop_app_app_1
