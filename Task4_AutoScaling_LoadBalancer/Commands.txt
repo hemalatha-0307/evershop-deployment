@@ -1,0 +1,10 @@
+# SSH into AppTier instance
+     ssh -i <your-key.pem> ubuntu@<AppTier-Instance-Public-IP>
+
+# Verify listening ports
+     sudo netstat -tulnp | grep LISTEN
+
+# Test internal LB
+     curl http://internal-Internal-lb-475046225.ap-south-1.elb.amazonaws.com:80/
+
+
