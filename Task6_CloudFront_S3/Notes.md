@@ -84,15 +84,21 @@ In this task, I connected my S3 bucket that stores product images with Amazon Cl
 After testing both URLs, here are the main observations:
 
 **1. Loading Speed**
+
 &nbsp;  - Direct S3: Took around 1 – 2 seconds to load each image.
+
 &nbsp;  - CloudFront: Loaded almost instantly (< 1 second) due to caching at nearby edge locations.
 
 **2. Latency**
+
 &nbsp;  - Direct S3: Slight delay noticed when fetching from the Mumbai region directly.
+
 &nbsp;  - CloudFront: Reduced latency as content was served from edge servers closer to the user.
 
 **3. Security & Access Control**
+
 &nbsp;  - Direct S3: Bucket had to be public to serve images (less secure).
+
 &nbsp;  - CloudFront: Allowed private S3 bucket while still delivering content securely over HTTPS.
 
 **4. Overall Performance Impact**
