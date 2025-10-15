@@ -88,9 +88,9 @@ After testing both URLs, here are the main observations:
 
 | **Aspect**            | **Direct S3**                                    | **CloudFront**                                                                    |
 
-|-------------------|----------------------------------------------|-------------------------------------------------------------------------------|
+|-------------------    |----------------------------------------------|----------------------------------------------------|
 
-| Loading Speed     | Took around 1–2 seconds to load an image.    | Loaded much faster (less than 1 second) after initial caching.                |
+| Loading Speed         | Took around 1–2 seconds to load an image.| Loaded much faster (less than 1 second) after initial caching.|
 
 | Latency           | Slightly higher due to single-region access. | Reduced latency because CloudFront serves content from nearby edge locations. |
 
@@ -112,15 +112,15 @@ Summary: CloudFront provided faster, more secure, and more scalable delivery com
 
 
 
-1\. AccessDenied\_S3 – Confirms that direct S3 access was successfully blocked.  
+1\. AccessDenied\_S3  = Confirms that direct S3 access was successfully blocked.  
 
-2\. CloudFront\_Create\_Distribution – Shows the setup process linking S3 as the origin.  
+2\. CloudFront\_Create\_Distribution  =Shows the setup process linking S3 as the origin.  
 
-3\. CloudFront\_Distribution\_Active – Confirms that the CloudFront distribution was successfully created and deployed.  
+3\. CloudFront\_Distribution\_Active  = Confirms that the CloudFront distribution was successfully created and deployed.  
 
-4\. CloudFront\_Image\_Loaded – Proves that the image loads correctly via the CloudFront domain.  
+4\. CloudFront\_Image\_Loaded  = Proves that the image loads correctly via the CloudFront domain.  
 
-5\. S3\_BucketPolicy\_Updated – Displays the final policy allowing only CloudFront to access bucket objects.
+5\. S3\_BucketPolicy\_Updated  =Displays the final policy allowing only CloudFront to access bucket objects.
 
 
 
