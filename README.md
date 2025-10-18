@@ -75,7 +75,7 @@ The final architecture consists of:
 ---
 
 ### 🌍 Architecture Diagram
-Example: `![AWS Architecture](architecture-diagram.png)`
+`![AWS Architecture](architecture-diagram.png)`
 
 ---
 
@@ -94,6 +94,6 @@ This project was completed as part of the **Nullclass Cloud Internship Program**
 **Hemalatha M**  
 2nd Year B.Tech – Information Technology  
 Rajalakshmi Engineering College  
-GitHub: [https://github.com/hemalatha-0307/evershop-deployment]
+GitHub: [https://github.com/hemalatha-0307/evershop-deployment]\n
 LinkedIn: [www.linkedin.com/in/hemalatha-m07]
 
