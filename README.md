@@ -1,4 +1,4 @@
-# 🛒 Evershop Deployment on AWS – Cloud Internship Project
+# 🛒 Evershop Deployment on AWS – Cloud Project
 
 ### 🚀 Overview
 This repository documents the complete cloud deployment lifecycle of the **Evershop e-commerce platform**, implemented as part of my **Nullclass Cloud Internship**.  
@@ -74,8 +74,9 @@ The final architecture consists of:
 
 ---
 
-### 🌍 Architecture Diagram
-`![AWS Architecture](architecture-diagram.png)`
+### 🏗️ Architecture Diagram
+![E-commerce Deployment Architecture](architecture-diagram.png)
+
 
 ---
 
@@ -94,6 +95,6 @@ This project was completed as part of the **Nullclass Cloud Internship Program**
 **Hemalatha M**  
 2nd Year B.Tech – Information Technology  
 Rajalakshmi Engineering College  
-GitHub: [https://github.com/hemalatha-0307/evershop-deployment]\n
+GitHub: [https://github.com/hemalatha-0307/evershop-deployment]
 LinkedIn: [www.linkedin.com/in/hemalatha-m07]
 
